@@ -4,7 +4,7 @@ export class WeatherService {
     if (city.charAt(0) == 'a') {
       return [
         {
-          city: 'A Town',
+          city: city,
           weather: [
             [1, 1],
             [1, 1],
@@ -20,7 +20,7 @@ export class WeatherService {
     if (city.charAt(0) == 'b') {
       return [
         {
-          city: 'B City',
+          city: city,
           weather: [
             [2, 2],
             [2, 2],
@@ -35,7 +35,7 @@ export class WeatherService {
     }
     return [
       {
-        city: 'Somewhere',
+        city: city,
         weather: [
           [3, 3],
           [3, 3],

@@ -9,7 +9,7 @@ import { WeatherService } from '../weather.service';
 export class WeatherCardComponent {
   @Input() index!: number;
   @Input() city!: string;
-  @Input() deleteCity!: any;
+  //@Input() deleteCity!: any;
 
   srv!: any;
   weatherInfo: any;
@@ -26,5 +26,13 @@ export class WeatherCardComponent {
     this.weatherInfo = this.srv.getWeatherInfo(this.city);
     this.cityName = this.weatherInfo[0].city;
     this.weather = this.weatherInfo[0].weather;
+  }
+
+  deleteCity(index: number) { 
+    let cities = JSON.parse(localStorage.getItem('cities') || '[]');
+
+    cities.splice(index, 1);
+    localStorage.setItem('cities', JSON.stringify(cities));
+    console.log(cities);
   }
 }

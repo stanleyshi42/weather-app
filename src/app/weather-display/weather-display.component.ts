@@ -33,9 +33,4 @@ export class WeatherDisplayComponent {
     localStorage.removeItem('cities');
     this.getCities();
   }
-
-  deleteCity(index: number) {
-    this.cities = this.cities.splice(index, 1);
-    console.log(this.cities);
-  }
 }
