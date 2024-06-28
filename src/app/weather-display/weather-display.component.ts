@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { WeatherService } from '../weather.service';
+import { WeatherInfo } from '../weather-info.model';
 
 @Component({
   selector: 'app-weather-display',
@@ -8,9 +10,17 @@ import { Component } from '@angular/core';
 export class WeatherDisplayComponent {
   cityInput: string = '';
   cities: string[] = [];
+  weatherInfo!: WeatherInfo[];
 
-  constructor() {
+  constructor(private weatherService: WeatherService) {
     this.getCities();
+  }
+
+  ngOnInit(): void {
+    this.weatherService.getWeather().subscribe((data) => {
+      console.log(data);
+      this.weatherInfo = data;
+    });
   }
 
   // Gets cities from local storage; creates an empty array if 'cities' key doesn't exist yet
@@ -32,5 +42,13 @@ export class WeatherDisplayComponent {
   deleteAllCities() {
     localStorage.removeItem('cities');
     this.getCities();
+  }
+
+  deleteCity(index: number) {
+    this.getCities();
+    if (index > -1) {
+      this.cities.splice(index, 1);
+      localStorage.setItem('cities', JSON.stringify(this.cities));
+    }
   }
 }

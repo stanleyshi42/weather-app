@@ -7,6 +7,7 @@ import { WeatherCardComponent } from './weather-card/weather-card.component';
 import { WeatherDisplayComponent } from './weather-display/weather-display.component';
 import { WeatherService } from './weather.service';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]
