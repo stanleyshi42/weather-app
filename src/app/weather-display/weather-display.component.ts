@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { WeatherService } from '../weather.service';
 
 @Component({
   selector: 'app-weather-display',
@@ -16,5 +15,9 @@ export class WeatherDisplayComponent {
       this.cities.push(this.cityInput.trim());
       this.cityInput = '';
     }
+  }
+
+  deleteAllCities() {
+    this.cities = [];
   }
 }

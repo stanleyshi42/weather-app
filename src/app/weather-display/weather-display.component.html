@@ -1,9 +1,14 @@
 <div class="container">
   <h1>Weather App</h1>
   <div class="row">
-    <div col="col">
+    <div class="col">
       <input [(ngModel)]="cityInput" />
       <button class="btn btn-primary" (click)="addCity()">🔎</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-danger" (click)="deleteAllCities()">
+        Delete All
+      </button>
     </div>
   </div>
   <div class="row">

@@ -9,11 +9,15 @@ import { WeatherService } from '../weather.service';
 export class WeatherCardComponent {
   @Input() city!: string;
   srv!: any;
-  weatherInfo: any[];
-  weather!: any;
+  weatherInfo: any;
+  weather: any;
 
   constructor(srv: WeatherService) {
     this.srv = srv;
-    this.weatherInfo = this.srv.getWeatherInfo('a');
+  }
+
+  ngOnInit() {
+    this.weatherInfo = this.srv.getWeatherInfo(this.city);
+    this.weather = this.weatherInfo[0].weather;
   }
 }

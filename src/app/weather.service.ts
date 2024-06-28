@@ -1,6 +1,5 @@
 export class WeatherService {
   getWeatherInfo(city: string) {
-    console.log(city);
     if (city.charAt(0) == 'a') {
       return [
         {
@@ -17,10 +16,10 @@ export class WeatherService {
         },
       ];
     }
-    if (city.charAt(0) == 'B City') {
+    if (city.charAt(0) == 'b') {
       return [
         {
-          city: 'b',
+          city: 'B City',
           weather: [
             [2, 2],
             [2, 2],
