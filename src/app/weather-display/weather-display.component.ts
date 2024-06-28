@@ -20,4 +20,11 @@ export class WeatherDisplayComponent {
   deleteAllCities() {
     this.cities = [];
   }
+
+  deleteCity(index: number) {
+    console.log('deleting city: ', index);
+
+    this.cities = this.cities.splice(index, 1);
+    console.log(this.cities);
+  }
 }

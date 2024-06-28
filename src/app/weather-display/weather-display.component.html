@@ -1,11 +1,13 @@
 <div class="container">
-  <h1>Weather App</h1>
+  <div class="lead fs-1 my-2">Weather App</div>
   <div class="row">
-    <div class="col">
-      <input [(ngModel)]="cityInput" />
+    <div class="col-auto">
+      <input class="lead" size="40" [(ngModel)]="cityInput" />
+    </div>
+    <div class="col-auto me-auto g-0">
       <button class="btn btn-primary" (click)="addCity()">🔎</button>
     </div>
-    <div class="col">
+    <div class="col-auto">
       <button class="btn btn-danger" (click)="deleteAllCities()">
         Delete All
       </button>
@@ -14,8 +16,10 @@
   <div class="row">
     <div class="col">
       <app-weather-card
-        *ngFor="let city of cities"
+        *ngFor="let city of cities; let i = index"
+        [index]="i"
         [city]="city"
+        [deleteCity]="deleteCity"
       ></app-weather-card>
     </div>
   </div>

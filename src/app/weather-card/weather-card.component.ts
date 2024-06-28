@@ -7,10 +7,13 @@ import { WeatherService } from '../weather.service';
   styleUrl: './weather-card.component.css',
 })
 export class WeatherCardComponent {
+  @Input() index!: number;
   @Input() city!: string;
+  @Input() deleteCity!: any;
+
   srv!: any;
   weatherInfo: any;
-  cityName: any;
+  cityName!: string;
   weather: any;
 
   // Inject service

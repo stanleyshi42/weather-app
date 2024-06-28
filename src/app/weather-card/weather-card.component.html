@@ -1,6 +1,9 @@
-<div class="container p-2 m-2 border border-dark">
+<div class="p-2 my-3 border border-dark">
   <div class="row">
-    <div>{{ cityName }}</div>
+    <div class="col-auto me-auto lead">{{ cityName }}</div>
+    <div class="col-auto">
+      <button class="btn btn-danger" (click)="deleteCity(index)">🗑️</button>
+    </div>
   </div>
 
   <div class="row">
@@ -14,7 +17,7 @@
 
   <div class="row">
     <div class="col" *ngFor="let w of weather">
-      <div class="lead fs-3 text-center">{{ w[0] }}°F /{{ w[1] }}°F</div>
+      <div class="lead fs-3 text-center">{{ w[0] }}°F / {{ w[1] }}°F</div>
     </div>
   </div>
 </div>
