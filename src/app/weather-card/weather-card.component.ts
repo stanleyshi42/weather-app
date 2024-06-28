@@ -10,14 +10,18 @@ export class WeatherCardComponent {
   @Input() city!: string;
   srv!: any;
   weatherInfo: any;
+  cityName: any;
   weather: any;
 
+  // Inject service
   constructor(srv: WeatherService) {
     this.srv = srv;
   }
 
+  // After component is created, call the service
   ngOnInit() {
     this.weatherInfo = this.srv.getWeatherInfo(this.city);
+    this.cityName = this.weatherInfo[0].city;
     this.weather = this.weatherInfo[0].weather;
   }
 }

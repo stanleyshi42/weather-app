@@ -1,5 +1,6 @@
 export class WeatherService {
-  getWeatherInfo(city: string) {
+  getWeatherInfo(c: string) {
+    let city = c.toLowerCase();
     if (city.charAt(0) == 'a') {
       return [
         {
